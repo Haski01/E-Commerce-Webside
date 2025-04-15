@@ -36,6 +36,34 @@ Browse products, add to cart, and enjoy a seamless shopping experience. 💳🛒
 
 ---
 
+## 🎥 Demo
+
+![Demo Animation](loome_demo.mp4)
+
+---
+
+## Screenshots
+
+![Demo Pictures_1](screenShorts.jpg)
+
+---
+
+![Demo Pictures_2](screenShorts_2.jpg)
+
+---
+
+![Demo Pictures_3](screenShorts_3.jpg)
+
+---
+
+![Demo Pictures_4](screenShorts_4.jpg)
+
+---
+
+![Demo Pictures_5](screenShorts_5.jpg)
+
+---
+
 ## 🎯 How to Get Started
 
 ### 1️⃣ Prerequisites:
