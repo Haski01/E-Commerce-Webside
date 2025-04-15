@@ -1,0 +1,85 @@
+<% layout("includes/boilerplate.ejs") %>
+
+<style>
+  table img {
+    transition: transform 0.3s ease;
+  }
+
+  table img:hover {
+    transform: scale(1.1);
+  }
+
+  table td,
+  table th {
+    vertical-align: middle;
+  }
+</style>
+
+<body>
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Your Cart</h2>
+    <div class="table-responsive">
+      <table class="table align-middle text-center border rounded shadow">
+        <thead class="table-dark">
+          <tr>
+            <th>Remove</th>
+            <th>Image</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <%for(cartItem of cartItems){%>
+          <tr>
+            <!-- Delete Button -->
+            <td>
+              <form
+                method="post"
+                action="/loome/cart/<%=cartItem._id%>/delete?_method=DELETE"
+              >
+                <button class="btn btn-danger btn-sm">
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
+              </form>
+            </td>
+
+            <!-- Product Image -->
+            <td>
+              <img
+                src="<%=cartItem.product.image%>"
+                alt="Product"
+                width="70"
+                class="rounded"
+              />
+            </td>
+
+            <!-- Product Name -->
+            <td><strong><%=cartItem.product.name%></strong></td>
+
+            <!-- Quantity Input -->
+            <td>
+              <input
+                type="number"
+                value="<%=cartItem.quantity%>"
+                min="1"
+                class="form-control w-50 mx-auto"
+              />
+            </td>
+
+            <!-- Total Price -->
+            <td><strong><%=cartItem.product.price%></strong></td>
+
+            <!-- Total Price -->
+            <td><strong><%=cartItem.product.price%></strong></td>
+          </tr>
+          <%}%>
+
+          <!-- Add more rows here dynamically using JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>

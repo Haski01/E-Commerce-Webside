@@ -1,0 +1,108 @@
+<% layout("includes/boilerplate.ejs") %>
+
+<style>
+  .product-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-detail {
+    padding-top: 20px;
+  }
+
+  .price {
+    font-size: 1.5rem;
+    color: #198754;
+    font-weight: bold;
+  }
+
+  .description {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .size-label {
+    margin-top: 15px;
+    font-weight: 500;
+  }
+
+  @media (min-width: 768px) {
+    .product-detail {
+      padding-top: 0;
+      padding-left: 20px;
+    }
+
+    .buy-btn:hover {
+      background-color: coral;
+    }
+  }
+</style>
+
+<body>
+  <div class="container py-5 mt-5">
+    <div class="row g-4 align-items-start mt-5">
+      <!-- Left Side - Image -->
+      <div class="col-12 col-md-6">
+        <img
+          src="<%=productDetail.image.replace('..', '')%>"
+          alt="Product Image"
+          class="product-image"
+        />
+      </div>
+
+      <!-- Right Side - Product Details -->
+      <div class="col-12 col-md-6 product-detail">
+        <h2><%=productDetail.name%></h2>
+        <p class="price">$<%=productDetail.price%></p>
+
+        <label for="sizeSelect" class="size-label">Select Size:</label>
+        <select class="form-select w-75 w-md-50 mb-3" id="sizeSelect">
+          <option selected>Select size</option>
+          <option value="S">Small</option>
+          <option value="M">Medium</option>
+          <option value="L">Large</option>
+          <option value="XL">Extra Large</option>
+          <option value="XXL">XXL</option>
+        </select>
+
+        <p class="description"><%=productDetail.description%></p>
+        <form action="/loome/add-to-cart/<%=productDetail._id%>" method="post">
+          <button class="buy-btn mt-3">Add to Cart</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr class="border border-secondary opacity-75 w-50 mx-auto" />
+
+  <section id="featured" class="mt-5 pb-5">
+    <hr />
+    <div class="container text-center">
+      <h2>Related Products</h2>
+      <hr class="mx-auto opacity-75" />
+    </div>
+
+    <div class="row mx-auto container-fluid">
+      <%for(product of products){%>
+      <div class="card card-body product text-center col-lg-3 col-md-4 col-12">
+        <img
+          class="card-img-top img-fluid mb-3"
+          src="<%=product.image.replace('..', '')%>"
+          alt="Card image"
+        />
+        <div class="star">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <h5 class="p-name"><%=product.name%></h5>
+        <h4 class="p-price">$<%=product.price%></h4>
+        <button class="buy-btn">shop now</button>
+      </div>
+      <%}%>
+    </div>
+  </section>
+</body>

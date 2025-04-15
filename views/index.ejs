@@ -1,0 +1,181 @@
+<% layout("includes/boilerplate.ejs") %>
+
+<body>
+  <!-- home section -->
+  <section id="home">
+    <div class="container">
+      <h5><%=home[0].title%></h5>
+      <h1><span> <%=home[0].subtitle%> </span></h1>
+      <p>
+        Shoomatinc keeps you comfortable <br />
+        while you walk and exercise.
+      </p>
+      <button>Shop Now</button>
+    </div>
+  </section>
+
+  <!-- brands sections -->
+  <section id="brand" class="container">
+    <div class="row m-0 py-5">
+      <%for(brand of brands){%>
+      <img
+        class="img-fluid col-lg-2 col-md-4 col-6"
+        src="<%=brand.image%>"
+        alt="brand-img"
+      />
+      <%}%>
+    </div>
+  </section>
+
+  <!-- new sections -->
+  <section id="new" class="w-100">
+    <div class="row p-0 m-0">
+      <%for(newProduct of newProducts){%>
+      <div class="one col-lg-4 col-md-12 col-12 p-0">
+        <img class="img-fluid" src="<%=newProduct.image%>" alt="img" />
+        <div class="details">
+          <h2><%=newProduct.title%></h2>
+          <button class="text-uppercase">Shop Now</button>
+        </div>
+      </div>
+      <%}%>
+    </div>
+  </section>
+
+  <!-- featured & Product section -->
+  <section id="featured" class="mt-5 pb-5">
+    <hr />
+    <div class="container text-center mt-5 py-5">
+      <h2>Our Featured</h2>
+      <hr class="mx-auto" />
+      <p>Here you can check out our new products with fair price on loome</p>
+    </div>
+
+    <div class="row mx-auto container-fluid">
+      <%for(product of products){%>
+      <div class="card card-body product text-center col-lg-3 col-md-4 col-12">
+        <img
+          class="card-img-top img-fluid mb-3"
+          src="<%=product.image%>"
+          alt="Card image"
+        />
+        <div class="star">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <h5 class="p-name"><%=product.name%></h5>
+        <h4 class="p-price">$<%=product.price%></h4>
+        <button class="buy-btn">shop now</button>
+      </div>
+      <%}%>
+    </div>
+  </section>
+
+  <!-- banner section -->
+  <section id="banner" class="my-5 py-5">
+    <div class="container">
+      <h4 style="color: #8d8d8d">MID SEASON'S SALE</h4>
+      <h1 style="color: #fff">
+        Autumn Collection <br />
+        UP TO 20% OFF
+      </h1>
+      <button style="background-color: coral">Shop Now</button>
+    </div>
+  </section>
+
+  <!-- clothes -->
+  <section id="clothes" class="mt-5">
+    <div class="container text-center mt-5 py-5">
+      <h2>Dresses & Jumpsuits</h2>
+      <hr class="mx-auto" />
+      <p>Here you can check out our new products with fair price on loome</p>
+    </div>
+
+    <div class="row mx-auto container-fluid">
+      <%for(cloth of clothes){%>
+      <div class="card card-body product text-center col-lg-3 col-md-4 col-12">
+        <img
+          class="card-img-top img-fluid mb-3"
+          src="<%=cloth.image%>"
+          alt="Card image"
+        />
+        <div class="star">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <h5 class="p-name"><%=cloth.name%></h5>
+        <h4 class="p-price">$<%=cloth.price%></h4>
+        <button class="buy-btn">shop now</button>
+      </div>
+      <%}%>
+    </div>
+  </section>
+
+  <!-- watches -->
+  <section id="watches" class="my-5">
+    <div class="container text-center py-5">
+      <h2>Best Watches</h2>
+      <hr class="mx-auto" />
+      <p>Here you can check out our new products with fair price on loome</p>
+    </div>
+
+    <div class="row mx-auto container-fluid">
+      <%for(watch of watches){%>
+      <div class="card card-body product text-center col-lg-3 col-md-4 col-12">
+        <img
+          class="card-img-top img-fluid mb-3"
+          src="<%=watch.image%>"
+          alt="Card image"
+        />
+        <div class="star">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <h5 class="p-name"><%=watch.name%></h5>
+        <h4 class="p-price">$<%=watch.price%></h4>
+        <button class="buy-btn">shop now</button>
+      </div>
+      <%}%>
+    </div>
+  </section>
+
+  <!-- shoes -->
+  <section id="shoes" class="my-5">
+    <div class="container text-center py-5">
+      <h2>Running Shoes</h2>
+      <hr class="mx-auto" />
+      <p>Here you can check out our new products with fair price on loome</p>
+    </div>
+
+    <div class="row mx-auto container-fluid">
+      <%for(shoe of shoes){%>
+      <div class="card card-body product text-center col-lg-3 col-md-4 col-12">
+        <img
+          class="card-img-top img-fluid mb-3"
+          src="<%=shoe.image%>"
+          alt="Card image"
+        />
+        <div class="star">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <h5 class="p-name"><%=shoe.name%></h5>
+        <h4 class="p-price">$<%=shoe.price%></h4>
+        <button class="buy-btn">shop now</button>
+      </div>
+      <%}%>
+    </div>
+  </section>
+</body>

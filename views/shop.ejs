@@ -1,0 +1,56 @@
+<% layout("includes/boilerplate.ejs") %>
+
+<body>
+  <section id="shop" class="my-5 py-5">
+    <div class="container mt-5 py-5">
+      <h1>Best Products</h1>
+      <hr />
+      <p>Here you can check out our new products with fair price on loome</p>
+    </div>
+
+    <div class="row mx-auto container">
+      <%for(shopProduct of shopProducts){%>
+      <div class="card card-body product text-center col-lg-3 col-md-4 col-12">
+        <form action="/loome/product/<%=shopProduct._id%>" method="post">
+          <img
+            class="card-img-top img-fluid mb-3"
+            src="<%=shopProduct.image%>"
+            alt="Card image"
+          />
+          <div class="star">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h5 class="p-name"><%=shopProduct.name%></h5>
+          <h4 class="p-price">$<%=shopProduct.price%></h4>
+          <button class="buy-btn">shop now</button>
+        </form>
+      </div>
+      <%}%>
+
+      <!-- pagination -->
+      <nav aria-label="...">
+        <ul class="pagination mt-5">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+          </li>
+          <li class="page-item active">
+            <a class="page-link" href="/loome/shop"
+              >1 <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">2 </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+</body>
